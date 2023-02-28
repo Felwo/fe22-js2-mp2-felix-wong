@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+}
+
+#container {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 2rem;
+}
+
+.animal-container {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 1rem;
+    margin: 0.5rem;
+    width: 150px;
+}
+
+.tamagotchi {
+    display: flex;
+    /* flex-flow: column nowrap; */
+    align-content: space-around;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+}
