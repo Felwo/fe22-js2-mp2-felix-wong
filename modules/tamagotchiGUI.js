@@ -39,15 +39,12 @@ export class TamagotchiGUI extends TamagotchiStatus {
             if (changeMade == false) {
                 if (prevHappiness == 0 || prevHunger == 0) {
                     this.dead();
-                    this.#updateText.innerText = `💀${this.#name} the ${this.#type}`;
                     clearInterval(interval);
                 }
                 else if (prevHappiness <= 4 || prevHunger <= 4) {
-                    this.#updateText.innerText = `😐${this.#name} the ${this.#type}`;
                     this.nearDeath();
                 }
                 else if (prevHappiness >= 5 && prevHunger >= 5) {
-                    this.#updateText.innerText = `😊${this.#name} the ${this.#type}`;
                     this.healthy();
                 }
             }
@@ -55,15 +52,17 @@ export class TamagotchiGUI extends TamagotchiStatus {
     }
     dead() {
         this.#animalContainer.style.backgroundColor = "#FF8267";
-        
+        this.#updateText.innerText = `💀${this.#name} the ${this.#type}`;
         this.#feedBtn.disabled = true;
         this.#playBtn.disabled = true;
     }
     nearDeath() {
         this.#animalContainer.style.backgroundColor = "#FFE067";
+        this.#updateText.innerText = `😐${this.#name} the ${this.#type}`;
     }
     healthy(){
         this.#animalContainer.style.backgroundColor = "#79FCA0";
+        this.#updateText.innerText = `😊${this.#name} the ${this.#type}`;
     }
 
     createGUI() {
